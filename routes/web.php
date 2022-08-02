@@ -21,29 +21,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-
-
 Route::get('/', MainPageWire::class);
-Route::get('/set-state-{theme}', function($theme){
 
-    dd($theme);
-});
 /** Front end routes that require authentication: account page, fake shopping cart? , etc */
 Route::middleware(['auth'])->group(function(){
     Route::get('/account', AccountPageWire::class);
 });
+
 Route::get('/lime-desk-lamp', LimeLampWire::class);
 Route::get('/migration-maker', MigrationMakerWire::class);
 Route::get('/about', AboutItemsWire::class);
 Route::get('/pi-rack', PieRackWire::class);
 Route::get('/desktop-power-supply', DesktopPowerSupplyWire::class);
 
+/** My routes, for editing the pages */
 Route::middleware(['auth', 'editor'])->group(function(){
     Route::get('/about/manage', ManageAboutItemsWire::class);
+
 });
 
 Route::middleware([
