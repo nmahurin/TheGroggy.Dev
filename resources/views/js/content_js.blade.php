@@ -12,7 +12,6 @@
             },
             showSmMenu: false,
             smMenu: '',
-            /*showSubMenu: false,*/
             {{-- The themes control. Will set the :class on element main in layouts/main.blade.php --}}
             toggleTheme(theme){
                 for (const item in this.themes) {
@@ -32,6 +31,12 @@
                 this.dev = ! this.dev;
             },
             @endif
+
+            showMailModal: false,
+            toggleMailModal(){
+                this.showMailModal = ! this.showMailModal;
+            },
+
             {{-- The menu control on small devices--}}
             toggleSmMenu(){
                 this.showSmMenu = !this.showSmMenu;
