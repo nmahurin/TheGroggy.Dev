@@ -24,7 +24,7 @@
 </div>
 
 
-{{-- For now this is ignored, going to be neat when the auth is set up to support it.  --}}
+{{-- For now this is ignored unless I'm logged in, going to be neat when the auth is set up to support it.  --}}
 @if(\Auth::check() && \Auth::user()->id == 1)
 <div class="flex flex-row p-0.5 h-8 w-12 rounded-full border-2 border-black dark:bg-slate-800
     bg-slate-100 necron:bg-lime-100 necron:border-lime-800 my-1"

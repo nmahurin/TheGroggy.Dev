@@ -48,7 +48,7 @@
 
 <div class="flex flex-col text-white pt-4 gap-4">
     <span class="font-bold text-xl border-b border-white mb-2 text-lime-400">Contact</span>
-    <div class="flex flex-row justify-between items-center lg:w-64 pr-4">
+    <div class="flex flex-row justify-between items-center lg:w-64 pr-4 cursor-pointer">
         <span>Nathan Mahurin</span>
         <span class="h-12 w-12 bg-slate-100 rounded-full border-2 border-white border-solid"
             @click="toggleMailModal">

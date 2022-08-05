@@ -15,11 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->integer('order');
-            $table->integer('shown')->nullable();
-            $table->integer('big')->nullable();
-            $table->integer('location');
+            $table->string('title'); // The title of the post
+            $table->integer('order'); // The order of the items on the main page
+            $table->integer('shown')->nullable(); // Bool if the post is displayed
+            $table->integer('big')->nullable(); // If the poast is big = 4x4 grid
+            $table->integer('location'); // The location of the post on the main page
+            $table->integer('span'); // The col-span the post has on the main page
             $table->string('description')->nullable();
             $table->string('url')->nullable();
             $table->longText('svg')->nullable();

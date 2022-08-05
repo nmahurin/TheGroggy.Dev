@@ -27,7 +27,9 @@
         (themes.dark ? 'dark' : ''),
         (themes.necron ? 'necron' : ''),
         @if(\Auth::check() && \Auth::user()->id == 1) (dev ? 'dev' : '') @endif
-        ]" {{--@click="showMailModal = false"--}}>
+        ]"
+        {{--@click="showMailModal = false"--}}>
+
     <header class="flex flex-row w-full h-16 lg:h-24 bg-slate-50 dark:bg-slate-800 dark:border-white
                 sticky top-0 z-50 border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800
                 ">

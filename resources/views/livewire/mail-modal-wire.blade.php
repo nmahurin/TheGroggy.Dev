@@ -1,14 +1,22 @@
 <div x-show="showMailModal" @keydown.escape="showMailModal = false" x-cloak
-     class="lg:w-1/2 w-full absolute left-0 right-0 lg:right-1/4 lg:left-1/4 h-[70vh] lg:h-[80vh]
-         bg-white top-20 lg:top-28 z-50 gap-4 p-5 rounded-lg drop-shadow-lg bg-opacity-50">
+     class="w-full absolute left-0 right-0 h-[70vh] lg:h-screen
+         bg-white top-12 lg:top-0 z-50 gap-4 p-5 rounded-lg drop-shadow-lg bg-opacity-50 grid grid-cols-3
+            lg:pt-20">
 
-    <div class="grid grid-cols-1 gap-4 p-5 rounded-lg bg-slate-800 h-full w-full overflow-y-scroll lg:overflow-auto">
-        <div class="absolute top-5 right-5 lg:top-3 lg:right-3 font-bold text-3xl h-12 w-12 rounded-full bg-white
-            flex flex-col justify-center items-center cursor-pointer border-lime-400 border-2 border-solid"
+    <div></div>
+
+    <div class="grid grid-cols-1 gap-4 p-5 rounded-lg bg-slate-800 col-span-3 lg:col-span-1 h-full overflow-y-scroll
+        lg:overflow-auto relative">
+
+        <div class="absolute top-3 right-3 font-bold text-3xl h-12 w-12 rounded-full bg-slate-800
+            flex flex-col justify-center items-center cursor-pointer border-lime-400 border-2 border-solid text-white
+            hover:text-lime-400"
             @click="showMailModal = false">
-        <span>
-            &times;
-        </span>
+
+            <span>
+                    &times;
+            </span>
+
         </div>
 
         <div class="bg-slate-700 border-l-2 border-t-2 border-lime-400 border-solid flex flex-col p-5 rounded-lg">
@@ -16,6 +24,8 @@
             <input name="nameInput" type="text" class="rounded-md focus:outline-none focus:ring-1 focus:ring-lime-400
             active:ring-lime-100">
         </div>
+
+
 
         <div class="bg-slate-700 border-l-2 border-t-2 border-lime-400 border-solid flex flex-col p-5 rounded-lg">
             <label for="subjectInput" class="text-bold text-lime-400 mb-2">Subject:</label>
@@ -37,5 +47,7 @@
         </div>
 
     </div>
+
+    <div></div>
 
 </div>

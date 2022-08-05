@@ -13,7 +13,7 @@
     .nav-no-subs{
         @apply relative my-5 p-5 text-white bg-slate-700 rounded-md text-3xl border-white border-2
                 hover:bg-slate-800 hover:text-lime-400 hover:border-slate-500
-                hover:scale-110 transition-transform duration-300
+                hover:scale-105 transition-transform duration-300
             necron:bg-lime-800 necron:hover:border-lime-800 necron:hover:bg-lime-200 necron:hover:text-black
             dark:bg-slate-800 dark:border-slate-100;
     }
@@ -21,7 +21,7 @@
     .nav-with-subs{
         @apply bg-slate-700 my-5 rounded-md text-3xl border-white border-2 relative p-5 text-white
                 hover:bg-slate-800 hover:text-lime-400 hover:border-slate-800
-                hover:scale-110 transition-transform duration-300
+                hover:scale-105 transition-transform duration-300
             necron:bg-lime-800 necron:hover:border-lime-800 necron:hover:bg-lime-200 necron:hover:text-black
             dark:bg-slate-800 dark:border-slate-100 dark:hover:border-slate-700;
     }
@@ -29,7 +29,7 @@
     .nav-subs{
         @apply p-5 m-5 text-white bg-slate-700 rounded-md text-xl border-white border-2
                 hover:bg-slate-800 hover:text-lime-400 hover:border-slate-800
-                hover:scale-110 transition-transform duration-300
+                hover:scale-105 transition-transform duration-300
             necron:bg-lime-800 necron:hover:border-lime-800 necron:hover:bg-lime-200 necron:hover:text-black
             dark:bg-slate-800 dark:border-slate-100;
     }
