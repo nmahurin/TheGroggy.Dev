@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\AboutItemsWire;
 use App\Http\Livewire\Auth\AccountPageWire;
+use App\Http\Livewire\Dashboard\ReportsWire;
 use App\Http\Livewire\DevTools\MigrationMakerWire;
 use App\Http\Livewire\LimeLampWire;
 use App\Http\Livewire\MainPageWire;
@@ -45,7 +46,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('reports', ReportsWire::class)->name('dashboard.reports');
+    Route::get('mailish', \App\Http\Livewire\Dashboard\MailishWire::class)->name('dashboard.mailish');
+
 });
