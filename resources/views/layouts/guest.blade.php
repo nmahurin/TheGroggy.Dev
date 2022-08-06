@@ -31,9 +31,7 @@
             {{ $slot }}
         </div>
 
-        <div class="hidden fixed bottom-0 right-2 lg:block flex flex-col">
-            @include('stubs.dark-mode-toggle')
-        </div>
+        <x-theme-toggles />
 
 
         @include('js.guest_js')
