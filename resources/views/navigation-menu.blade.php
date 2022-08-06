@@ -1,11 +1,11 @@
-<nav x-data="{ open: false }" class="border-b border-lime-400 bg-slate-700 text-white">
+<nav x-data="{ open: false }" class="border-b-4 border-slate-900 dark:border-lime-400 bg-slate-700 dark:bg-slate-800 text-white">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 lg:h-20">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center lg:h-16">
-                    <a href="/" class="h-12 w-12 bg-white border-2
+                    <a href="/" class="h-12 w-12 bg-slate-700 border-2
                             text-lime-400 border-lime-400 p-2 rounded-full border-solid necron:bg-lime-50">
                         @include('svg.lime-4-minimalist-1')
                     </a>
