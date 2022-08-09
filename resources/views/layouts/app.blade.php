@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/tailwindoutput.css') }}">
-    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
 </head>
 
 <body class="font-sans antialiased scrollbar" x-data="mainPage">

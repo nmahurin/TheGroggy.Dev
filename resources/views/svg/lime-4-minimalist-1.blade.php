@@ -1,5 +1,6 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 64 64" fill="currentColor" enable-background="new 0 0 64 64" xml:space="preserve" class="w-full h-full">
+     viewBox="0 0 64 64" fill="currentColor" enable-background="new 0 0 64 64" xml:space="preserve"
+     class="w-full h-full {{ $classes ?? '' }}">
 <path id="Lemon-lobule_2_" d="M53.0751762,0.2930124c-0.3906021-0.3907-1.0234032-0.3907-1.4141006,0l-4.7492027,4.7500997
 	c-0.0007973,0.0008001-0.0019989,0.0009999-0.002697,0.0016999c0,0-0.0009995,0.0019002-0.0017014,0.0027003L0.2929758,51.6696129
 	c-0.3906,0.3907013-0.3906,1.0235977,0,1.414299c7.2772999,7.2787018,16.8319988,10.9170036,26.3915997,10.9161034
