@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Dashboard;
 
+use App\Models\Telemetry\CommandLogs;
 use App\Models\User;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class UserInformationWire extends Component
@@ -10,8 +12,8 @@ class UserInformationWire extends Component
     public $users;
 
     public function render(){
-        return view('livewire.dashboard.user-information-wire')
-            ->layout('layouts.livewire_blank');
+
+        return view('livewire.dashboard.user-information-wire');
     }
 
     public function mount(){

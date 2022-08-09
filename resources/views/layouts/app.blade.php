@@ -14,8 +14,7 @@
     @livewireStyles
 
     <!-- Scripts -->
-    {{--@vite(['resources/css/app.css', 'resources/js/app.js'])--}}
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     <script src="{{ mix('js/app.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/tailwindoutput.css') }}">
 </head>
@@ -32,7 +31,7 @@
 
         <x-jet-banner />
 
-        <div class="min-h-screen bg-slate-100 dark:bg-slate-800">
+        <div class="min-h-screen bg-slate-100 dark:bg-slate-800 z-0">
 
             @livewire('navigation-menu')
 
