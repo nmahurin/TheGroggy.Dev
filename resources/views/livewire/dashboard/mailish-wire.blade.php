@@ -22,7 +22,7 @@
 
             <input type="text" class="border-l-2 border-t-2 border-b border-solid border-lime-400 rounded-md
                 bg-slate-800 focus:outline-none focus:ring-2 focus:ring-lime-400 text-white
-                active:ring-lime-100" placeholder="Search.." />
+                active:ring-lime-100 hover:ring-2 hover:ring-white hover:outline-none" placeholder="Search.." />
 
             <div class="grow py-5 rounded-md border-t-2 border-b-2 border-solid border-slate-500
                 bg-slate-800 text-white flex flex-col gap-2 p-1 lg:h-[65vh] scrollbar overflow-y-auto">
@@ -37,9 +37,9 @@
                             </div>
                             <div class="flex flex-row p-1">
                                 <span class="text-lime-400 text-xs indent-4">From:</span>
-                                <span class="text-xs" x-text="mail.user_from.name"></span>
+                                <span class="text-xs font-bold" x-text="mail.user_from.name"></span>
                             </div>
-                            <div class="flex flex-row p-1 justify-between">
+                            <div class="flex flex-row p-1 pb-2 justify-between">
                                 <span class="text-xs indent-4" x-text="mail.body.substring(0, 120)"></span>
                                 <span class="text-lime-400" x-text="mail.body.length >= 120 ? '...' : ''"></span>
                             </div>
@@ -47,7 +47,7 @@
                     </template>
 
                     @if($mailishItems->count() >= 5)
-                        <div class="w-full py-4 h-16 border-dashed border text-center text-xs text-slate-200
+                        <div class="w-full my-5 py-4 h-16 border-dashed border text-center text-xs text-slate-200
                             border-slate-300 cursor-pointer hover:border-slate-500">
 
                             Load More
@@ -57,18 +57,6 @@
                 @else
                 <span class="text-xs text-slate-500">There's nothing here</span>
                 @endif
-                {{--@forelse($mailishItems as $mailish)
-                    <div class="border-l-2 border-t-2 border-b border-white rounded-md flex flex-col gap-2 cursor-pointer
-                            hover:border-slate-500"
-                            @click="showMailItem({{ $mailish }})">
-                        <span class="bg-slate-700 p-2">{{ substr($mailish->subject, 0, 45) }} {!! strlen($mailish->subject) > 45 ? ' <span class="text-lime-400">...</span>' : '' !!}</span>
-                        <span class="text-xs p-1 indent-4"><span class="text-lime-400">From:</span> {{ $mailish->userFrom->name }}</span>
-                        <span class="text-xs p-1 indent-4">{{ substr($mailish->body, 0, 120) }}
-                            {!! strlen($mailish->body) > 120 ? ' <span class="text-lime-400">...</span>' : '' !!}</span>
-                    </div>
-                @empty
-                    <span class="text-xs text-slate-500">There's nothing here</span>
-                @endforelse--}}
 
             </div>
 
@@ -79,23 +67,26 @@
              x-show=" window.matchMedia('(max-width:600px)') || showmail " x-cloak>
 
             <div class="min-h-[10%] p-2 border-b-2 border-solid border-slate-700 flex flex-row flex-wrap content-center
-                gap-2 w-full bg-slate-700 rounded-md">
+                gap-2 w-full bg-slate-700 rounded-md justify-items-end">
 
-                <button type="button" class="py-2 px-4 main-button flex flex-row gap-1" x-show="showMail">
-                    <span class="w-5 h-5">@include('svg.reply')</span>
-                    <span>Reply</span>
+                <button type="button" class="py-2 px-4 main-button flex flex-row gap-1 items-center" x-show="showMail">
+                    <span class="w-4 h-4">@include('svg.reply')</span>
+                    <span><span class="text-white underline">R</span>eply</span>
+                </button>
+
+                <button type="button" class="py-2 px-4 main-button flex flex-row gap-1 items-center" x-show="showMail">
+                    <span class="w-4 h-4">@include('svg.email')</span>
+                    <span>(<span class="underline text-white">U</span>n) read</span>
                 </button>
 
                 <button type="button" class="py-2 px-4 main-button" x-show="showMail">
-                    (Un) read
-                </button>
-
-                <button type="button" class="py-2 px-4 main-button" x-show="showMail">
+                    <span class="text-xl font-bold">&minus;</span>
                     <span class="text-white underline">D</span>elete
                 </button>
 
-                <button type="button" class="py-2 px-4 main-button">
-                    <span class="text-xl font-bold">&plus;</span> New
+                <button type="button" class="py-2 px-4 main-button justify-self-end">
+                    <span class="text-xl font-bold">&plus;</span>
+                    <span class="text-white underline">N</span>ew
                 </button>
 
             </div>
@@ -104,7 +95,7 @@
             <div class="min-h-[10%] p-2 pl-8 border-b-2 border-solid border-slate-700 flex flex-col justify-center text-white"
                 x-show="showMail">
                 <span x-text="selectedMail.subject"></span>
-                <span x-text="'- ' + selectedMail.user_from.name" class="text-lime-400 pl-8"></span>
+                <span x-text="'- ' + selectedMail.user_from.name" class="text-lime-400 pl-8 font-bold"></span>
             </div>
 
             <div class="grow p-4 text-white indent-4" x-show="showMail" x-text="selectedMail.body"></div>

@@ -47,14 +47,14 @@
 
         <div class="flex flex-col lg:flex-row">
             <div class="lg:bg-side-image-2 bg-slate-100 basis-1/6 dark:bg-gray-800 necron:bg-lime-300 lg:py-6 lg:px-6
-                    bg-auto bg-center bg-repeat bg-origin-border">
+                    bg-auto bg-center bg-repeat bg-origin-border z-10">
 
             </div>
 
             {{ $slot }}
 
             <div class="flex-row bg-side-image-2 basis-1/6 dark:bg-gray-800 necron:bg-lime-300 bg-slate-100 py-6 px-6
-                    bg-auto bg-center bg-repeat bg-origin-border">
+                    bg-auto bg-center bg-repeat bg-origin-border z-10">
 
             </div>
         </div>

@@ -1,4 +1,4 @@
-<div class="hidden fixed bottom-0 right-2 lg:block flex flex-col">
+<div class="hidden fixed bottom-0 right-2 lg:block flex flex-col z-20">
 
     <div class="flex flex-row rounded-full h-8 w-12 p-0.5 text-gray-800 dark:text-white
         border-2 border-black dark:bg-slate-800 bg-slate-100 necron:bg-lime-100 necron:border-lime-800
