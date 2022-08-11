@@ -9,7 +9,7 @@
     toPage(page){
 
     }
-}" class="flex flex-col gap-4">
+}" class="flex flex-col gap-4 bg-slate-100 dark:bg-slate-700">
 
     <div class="bg-slate-700 flex flex-row justify-center p-2 dark:bg-slate-800 rounded-md">
 
@@ -27,10 +27,10 @@
     </div>
 
     <div class="border-slate-500 border-solid border-b border-t flex flex-row p-2 m-2">
-        <span class="basis-1/5 font-bold text-lime-400">#</span>
-        <span class="basis-1/5 font-bold text-lime-400">Name</span>
-        <span class="basis-1/5 font-bold text-lime-400">Email</span>
-        <span class="basis-1/5 font-bold text-lime-400">Created At</span>
+        <span class="basis-1/5 font-bold text-slate-800 dark:text-lime-400">#</span>
+        <span class="basis-1/5 font-bold text-slate-800 dark:text-lime-400">Name</span>
+        <span class="basis-1/5 font-bold text-slate-800 dark:text-lime-400">Email</span>
+        <span class="basis-1/5 font-bold text-slate-800 dark:text-lime-400">Created At</span>
         <span class="basis-1/5"></span>
     </div>
 
@@ -40,10 +40,10 @@
             <div class="border-slate-500 border-solid border-b flex flex-row p-2"
                  :class="editUser == user.id ? 'bg-slate-500 text-lime-400' : ''"
             >
-                <span class="basis-1/5 text-white" x-text="user.id"></span>
-                <span class="basis-1/5 text-white" x-text="user.name"></span>
-                <span class="basis-1/5 text-white" x-text="user.email"></span>
-                <span class="basis-1/5 text-white" x-text="formatDate(user.created_at)"></span>
+                <span class="basis-1/5 text-slate-800 dark:text-white" x-text="user.id"></span>
+                <span class="basis-1/5 text-slate-800 dark:text-white" x-text="user.name"></span>
+                <span class="basis-1/5 text-slate-800 dark:text-white" x-text="user.email"></span>
+                <span class="basis-1/5 text-slate-800 dark:text-white" x-text="formatDate(user.created_at)"></span>
                 <span class="basis-1/5 flex flex-row justify-end items-center pr-4">
 
                     <div class="rounded-lg bg-slate-700 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-900
@@ -61,27 +61,28 @@
                 </span>
             </div>
 
-            <div class="h-16 bg-white border-slate-500 border-2 border-solid text-black rounded-lg
+            <div class="h-16 bg-white dark:bg-slate-600 border-slate-500 border-2 border-solid text-black rounded-lg
                 flex flex-row gap-4 justify-around p-2"
                  x-show=" editUser == user.id ">
 
                 <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-md flex flex-row justify-center items-center
-                                text-white">
+                                text-white cursor-pointer">
                     Reset Password
                 </div>
 
                 <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-md flex flex-row justify-center items-center
-                                text-white">
+                                text-white cursor-pointer">
                     Activation link
                 </div>
 
                 <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-md flex flex-row justify-center items-center
-                                text-white">
+                                text-white cursor-pointer">
                     Update Information
                 </div>
 
-                <div class="bg-slate-100 dark:bg-slate-700 text-red-500 p-2 rounded-md flex flex-row justify-center
-                        border border-solid items-center dark:border-red-400">
+                <div class="bg-slate-100 dark:bg-slate-700 text-red-400 p-2 rounded-md flex flex-row justify-center
+                        border border-solid items-center border-red-400 bg-slate-100 cursor-pointer
+                        hover:text-red-400">
 
                     Delete
                 </div>

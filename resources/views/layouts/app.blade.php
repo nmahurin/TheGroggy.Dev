@@ -24,7 +24,7 @@
         :class="[
             (themes.dark ? 'dark' : ''),
             (themes.necron ? 'necron' : ''),
-            @if(\Auth::check() && \Auth::user()->id == 1) (dev ? 'dev' : '') @endif
+            {{ \Auth::check() && \Auth::user()->id == 1? '(dev ? \'dev\' : \'\')' : '' }}
         ]"
         class=""
     >
