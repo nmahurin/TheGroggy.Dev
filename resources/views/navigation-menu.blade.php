@@ -89,6 +89,10 @@
                     </div>
                 @endif
 
+                <div class="h-20 {{ request()->routeIs('dashboard') ? 'hidden' : '' }}">
+                    @livewire('dashboard.action-items-wire')
+                </div>
+
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-jet-dropdown align="right" width="48">
@@ -160,6 +164,11 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+
+            <div class="h-12 {{ request()->routeIs('dashboard') ? 'hidden' : '' }}">
+                @livewire('dashboard.action-items-wire')
+            </div>
+
         </div>
 
         <!-- Responsive Settings Options -->

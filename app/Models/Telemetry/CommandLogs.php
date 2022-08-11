@@ -2,6 +2,7 @@
 
 namespace App\Models\Telemetry;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -29,6 +30,10 @@ class CommandLogs extends Model{
 
     public function scopeMyLogs(Builder $query, $job){
         return $query->where('job', 'LIKE', $job);
+    }
+
+    public function formatThis($attr, $format){
+        return (new Carbon($this->attributes[$attr]))->format($format);
     }
 
 }

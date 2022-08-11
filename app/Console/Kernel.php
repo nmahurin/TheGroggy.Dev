@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
 
         $schedule->command(HarvestWeather::class)
-            ->hourly()
+            ->everyTwoHours()
             ->before(function(){
                 /** Drop weather logs older than 7 days */
                 CommandLogs::myLogs('weather')
@@ -49,14 +49,14 @@ class Kernel extends ConsoleKernel
                     ->orderByDesc('created_at')
                     ->first()->update([
                         'end_time' => Carbon::now(),
-                        'status' => 1,
+                        'status' => 2,
                         'output' => $output
                     ]);
             });
 
 
         $schedule->command(HarvestTelemetry::class)
-            ->everyFifteenMinutes()
+            ->everyThirtyMinutes()
             ->before(function(){
                 /** Drop telemetry logs older than 2 days */
                 CommandLogs::myLogs('telemetry_counts')
