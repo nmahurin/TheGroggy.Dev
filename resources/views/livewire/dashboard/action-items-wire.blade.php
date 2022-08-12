@@ -22,7 +22,7 @@
                 dark:hover:bg-slate-900 border-solid relative cursor-pointer hover:text-{{ $item['level'] }} text-white"
                 href="{{ $item['url'] }}">
 
-                <div class="{{ request()->routeIs('dashboard') ? 'lg:w-24 lg:h-24' : 'h-10 w-10' }}">
+                <div class="{{ request()->routeIs('dashboard') ? 'lg:w-20 lg:h-20' : 'h-10 w-10' }}">
                     @include('svg.' . $item['svg'], ['classes' => ''])
                 </div>
 
