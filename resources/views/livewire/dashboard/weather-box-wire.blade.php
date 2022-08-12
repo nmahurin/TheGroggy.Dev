@@ -1,82 +1,81 @@
 <div x-data="{
-    forecastDays: {{ $forecastDays->where('is_daytime', 1) }},
-    forecastNights: {{ $forecastDays->where('is_daytime', null) }},
+    forecasts: {{ $forecastDays }},
     tempColor(temp){
         if(temp > 80){
             return 'text-red-300';
         }else if(temp < 60){
             return 'text-blue-300';
+        }else{
+            return 'text-slate-800 dark:text-white'
         }
-    }
+    },
 }">
+{{--{{ dd($forecastDays->skip(3)->first()) }}--}}
+    <div class="flex flex-col">
+        <template x-for="day in forecasts">
+            <div class="bg-slate-100 dark:bg-slate-700 grid grid-cols-4
+                border-slate-500 border border-solid
+                rounded-md p-2 min-h-[3rem]">
 
-    {{--<div class="flex flex-row overflow-x-auto scrollbar lg:justify-around">
-
-        <template x-for="day in forecastDays">
-        @foreach($forecastDays as $day)
-            <div class="bg-slate-100 dark:bg-slate-700 flex flex-col gap-1 items-center border-slate-500 border border-solid
-                rounded-md">
-
-                <span class="text-xl text-bold text-wrap text-slate-800 dark:text-white">{{ $day->name }}</span>
-                <span class="text-slate-800 dark:text-white"
+                <span x-text="day.name" class="text-bold text-slate-800 dark:text-white"></span>
+                <span x-text="day.temperature + '&deg;'"
                       :class="tempColor(day.temperature)"
-                >{!! $day->temperature . '&deg;' !!}</span>
-                <img class="" src="{{ $day->icon }}" />
-                <span>
+                ></span>
+                <span class="flex flex-row justify-between col-span-2">
+                    {{--<img :src="day.icon" />--}}
+                    <div class=""
+                         :class="day.icons.few ? 'text-slate-900 dark:text-lime-400' : 'text-slate-300 dark:text-slate-500'">
+                        <div class="w-6 h-6">
+                            @include('svg.sun-filled')
+                        </div>
+                    </div>
+
+                    <div class=""
+                         :class="day.icons.sct ? 'text-slate-900 dark:text-lime-400' : 'text-slate-300 dark:text-slate-500'">
+                        <div class="h-6 w-6">
+                            @include('svg.cloud-clear')
+                        </div>
+                    </div>
+
+                    <div :class="day.icons.bkn ? 'dark:text-lime-400 text-slate-900' : 'text-slate-300 dark:text-slate-500'">
+                        <div class="h-6 w-6">
+                            @include('svg.cloud-full')
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col"
+                         :class="day.icons.tsra_sct ? 'dark:text-lime-400 text-slate-900' : 'text-slate-300 dark:text-slate-500'">
+                        <div class="h-6 w-6">
+                            @include('svg.cloud-rain-1')
+                        </div>
+                        <div x-text="day.precip.tsra_sct ? day.precip.tsra_sct + '&percnt;' : ''"
+                             class="text-xs text-center"></div>
+                    </div>
+
+                    <div class="text-slate-300 dark:text-slate-500 flex flex-col gap-1">
+                        <div class="h-6 w-6">
+                            @include('svg.cloud-rain-heavy')
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col"
+                        :class="day.icons.tsra_hi ? 'dark:text-lime-400 text-slate-900' : 'text-slate-300 dark:text-slate-500'">
+                        <div class="h-6 w-6">
+                            @include('svg.cloud-lightning-rain-fill')
+                        </div>
+                        <div x-text="day.precip.tsra_hi ? day.precip.tsra_hi + '&percnt;' : ''"
+                             class="text-xs text-center"></div>
+                    </div>
 
                 </span>
 
             </div>
-        @endforeach
         </template>
-
-    </div>--}}
-
-
-    <div class="grid grid-cols-2 gap-2 p-2">
-
-        <div class="flex flex-col gap-2">
-
-            <template x-for="day in forecastDays">
-                <div class="bg-slate-100 dark:bg-slate-700 flex flex-col gap-1 items-center border-slate-500 border border-solid
-                rounded-md">
-
-                    <span x-text="day.name" class="text-xl text-bold text-wrap text-slate-800 dark:text-white"></span>
-                    <span x-text="day.temperature + '&deg;'"
-                          class="dark:text-white text-slate-800"
-                          :class="tempColor(day.temperature)"
-                    ></span>
-                    <img class="" :src="day.icon" />
-                    <span>
-
-                    </span>
-
-                </div>
-            </template>
-
-        </div>
-
-        <div class="flex flex-col gap-2">
-
-            <template x-for="day in forecastNights">
-                <div class="bg-slate-100 dark:bg-slate-700 flex flex-col gap-1 items-center border-slate-500 border border-solid
-                rounded-md">
-
-                    <span x-text="day.name" class="text-xl text-bold text-wrap text-slate-800 dark:text-white"></span>
-                    <span x-text="day.temperature + '&deg;'"
-                          class="text-slate-800 dark:text-white"
-                          :class="tempColor(day.temperature)"
-                    ></span>
-                    <img class="" :src="day.icon" />
-                    <span>
-
-                    </span>
-
-                </div>
-            </template>
-
-        </div>
-
     </div>
+
+
 
 </div>

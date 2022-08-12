@@ -4,38 +4,27 @@
         <div class="flex justify-between h-16 lg:h-20">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center lg:h-16">
-                    <a href="/" class="h-12 w-12 bg-slate-700 border-2
+                <div class="shrink-0 flex items-center">
+                    <a href="/" class="h-16 w-16 bg-slate-700 border-2
                             text-lime-400 border-lime-400 p-2 rounded-full border-solid necron:bg-lime-50">
                         @include('svg.lime-4-minimalist-1')
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                @foreach([['name' => 'Dashboard', 'url' => '']] as $link)
-
+                @foreach([
+                        ['name' => 'Dashboard', 'url' => 'dashboard'],
+                        ['name' => 'Reports', 'url' => 'dashboard.reports']
+                    ] as $link)
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route($link['url']) }}" class="active:bg-slate-800 active:text-lime-400
+                            text-white"
+                                        :active="request()->routeIs('dashboard')">
+                            {{ __($link['name']) }}
+                        </x-jet-nav-link>
+                    </div>
                 @endforeach
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" class="active:bg-slate-800 active:text-lime-400
-                            text-white"
-                            :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard.reports') }}" class="active:bg-slate-800 active:text-lime-400
-                            text-white"
-                                    :active="request()->routeIs('dashboard')">
-                        {{ __('Reports') }}
-                    </x-jet-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard.mailish') }}" class="active:bg-slate-800 active:text-lime-400
-                            text-white"
-                                    :active="request()->routeIs('dashboard')">
-                        {{ __('Mail-ish') }}
-                    </x-jet-nav-link>
-                </div>
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

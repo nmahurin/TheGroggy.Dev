@@ -7,22 +7,23 @@
 
     <div class="py-6">
         <div class="max-w-[95%] lg:max-w-[90%] mx-auto sm:px-1 lg:px-8">
-            <div class="grid grid-cols-1 lg:flex lg:flex-row bg-white dark:bg-slate-700 overflow-hidden
+            <div class="grid grid-cols-1 lg:grid-cols-3 bg-white dark:bg-slate-700 overflow-hidden
                 shadow-xl sm:rounded-lg lg:p-6 lg:gap-6 items-start gap-4 lg:min-h-[80vh] w-full">
 
-                <div class="basis-1/3 flex flex-col gap-4 grow-0">
+                <div class="flex flex-col gap-4">
 
                     <div class="border-slate-500 border-2 border-solid rounded-lg">
                         @livewire('dashboard.action-items-wire')
                     </div>
 
-                    <div class="border-slate-500 border-2 border-solid rounded-lg">
+                    <div class="border-slate-500 border-2 border-solid rounded-lg overflow-x-auto
+                        max-w-full scrollbar">
                         @livewire('dashboard.weather-box-wire')
                     </div>
 
                 </div>
 
-                <div class="basis-2/3 flex flex-col gap-4">
+                <div class="flex flex-col gap-4 lg:col-span-2">
 
                     <div class="border-slate-500 border-2 border-solid rounded-lg">
                         @livewire('dashboard.usage-information-wire')

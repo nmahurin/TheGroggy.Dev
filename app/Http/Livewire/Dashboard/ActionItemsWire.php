@@ -9,6 +9,7 @@ class ActionItemsWire extends Component
     public $actionItems;
 
     public function render(){
+
         $this->fillItems();
         return view('livewire.dashboard.action-items-wire');
     }
@@ -45,7 +46,7 @@ class ActionItemsWire extends Component
                 'svg' => $chart == 1 ?  'chart-up' : 'chart-down',
                 'count' => rand(3, 37),
                 'level' => $chart == 1 ? 'lime-400' : 'red-400',
-                'url' => '/dashboard',
+                'url' => '/reports',
             ]
         ];
     }
