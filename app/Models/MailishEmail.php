@@ -20,4 +20,8 @@ class MailishEmail extends Model{
         ]);
     }
 
+    protected $attributes = [
+        'status' => 1
+    ];
+
 }

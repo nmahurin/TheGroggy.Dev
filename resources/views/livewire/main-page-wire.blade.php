@@ -1,38 +1,34 @@
-<div class="main-slot">
+<div class="main-slot relative bg-slate-100">
 
     <div class="hidden dev:block h-24 text-3xl text-center dark:text-white">
         Dev Message
     </div>
 
-    {{--<div class="page-header-box relative">
-        <div class="h-10 w-10 lg:h-16 lg:w-16 absolute left-4 top-5 md:left-6 md:top-2 text-center bg-slate-700
-            text-lime-400 border-slate-800 p-2 rounded-full border-solid necron:bg-lime-50">
-            @include('svg.lime-4-minimalist-1')
+    <div class="h-1/2 w-3/4 lg:w-1/2 absolute left-0 right-0 top-16 md:top-0 bottom-0 text-center mx-auto md:m-auto
+        flex flex-col gap-10 justify-center text-slate-900">
+        <div class="text-4xl lg:text-7xl dark:text-white">
+            The<span class="dark:text-lime-400">Groggy</span><span class="text-lime-400">.</span>Dev
         </div>
-
-        <div>
-            <span class="text-lime-400 necron:text-black">Lime</span> Desk Lamp
+        <div class="grid grid-rows-3 lg:grid-cols-3 gap-4 px-6 lg:px-1/4">
+            <a href="/about" class="border-b-2 border-solid dark:border-white border-slate-500 p-2 hover:bg-slate-700
+                    dark:hover:bg-slate-800 rounded-md hover:text-lime-400 dark:hover:text-lime-400 dark:text-white">
+                <button type="button" class="text-lg">
+                    About
+                </button>
+            </a>
+            <a href="/projects" class="border-b-2 border-solid dark:border-white border-slate-500 p-2 hover:bg-slate-700
+                    dark:hover:bg-slate-800 rounded-md hover:text-lime-400 dark:hover:text-lime-400 dark:text-white">
+                <button type="button" class="text-lg">
+                    Projects
+                </button>
+            </a>
+            <a href="/dashboard" class="border-b-2 border-solid dark:border-white border-slate-500 p-2 hover:bg-slate-700
+                    dark:hover:bg-slate-800 rounded-md hover:text-lime-400 dark:hover:text-lime-400 dark:text-white">
+                <button type="button" class="text-lg">
+                    Dashboard
+                </button>
+            </a>
         </div>
-
-        <div class="h-16 w-16 absolute right-6 top-2 bg-slate-700 text-lime-400 border-slate-800 p-2 rounded-full
-            border-solid hidden md:block necron:bg-lime-50">
-            @include('svg.lime-4-minimalist-1')
-        </div>
-    </div>--}}
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2 md:px-6 mt-8">
-        @foreach($mainPosts as $post)
-            @include('stubs.main-page.default', ['post' => $post])
-        @endforeach
     </div>
 
-    {{--<div class="page-header-box">
-        <span class="text-lime-400 necron:text-black">Personal </span> Projects
-    </div>--}}
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2 md:px-6 mt-8">
-        @foreach($subPosts as $post)
-            @include('stubs.main-page.default', ['post' => $post])
-        @endforeach
-    </div>
 </div>
