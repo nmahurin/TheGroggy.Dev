@@ -32,7 +32,7 @@
 
         <header class="flex flex-row w-full h-16 lg:h-24 bg-slate-50 dark:bg-slate-800 dark:border-lime-400
                     sticky top-0 z-50 border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800
-                    ">
+                    {{ Route::current()->getName() == 'index' ? 'hidden' : '' }}">
             <a href="/" class="text-3xl lg:text-5xl text-bold pl-4 md:pl-12 dark:text-white necron:text-white pt-4">
                 The<span class="dark:text-lime-400">Groggy</span>.Dev
             </a>

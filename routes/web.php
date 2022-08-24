@@ -9,6 +9,7 @@ use App\Http\Livewire\MainPageWire;
 use App\Http\Livewire\Manage\ManageAboutItemsWire;
 use App\Http\Livewire\Other\DesktopPowerSupplyWire;
 use App\Http\Livewire\Other\PieRackWire;
+use App\Http\Livewire\ProjectsWire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,13 +23,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', MainPageWire::class);
+Route::get('/', MainPageWire::class)->name('index');
 
 /** Front end routes that require authentication: account page, fake shopping cart? , etc */
 Route::middleware(['auth'])->group(function(){
     Route::get('/account', AccountPageWire::class);
 });
 
+Route::get('/projects', ProjectsWire::class);
 Route::get('/lime-desk-lamp', LimeLampWire::class);
 Route::get('/migration-maker', MigrationMakerWire::class);
 Route::get('/about', AboutItemsWire::class);
