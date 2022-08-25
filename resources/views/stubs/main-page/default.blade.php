@@ -1,19 +1,27 @@
 <div class="group relative border-2 border-slate-500 bg-white rounded-md
-         hover:scale-105 transition-transform duration-300 hover:bg-slate-700 necron:hover:bg-white hover:text-white
-        necron:hover:text-black necron:border-white
+         hover:scale-105 transition-transform duration-300 hover:bg-slate-700
+         necron:hover:bg-white hover:text-white necron:hover:text-black necron:border-white
+         dark:border-white
         dark:bg-slate-800 dark:text-white md:col-span-{{ $post->span }}">
 @if(isset($post->url))
     <a href="{{ $post->url }}">
 @endif
-    <div class="border-b-2 border-slate-500 mb-4 flex necron:border-lime-800 bg-slate-700 necron:bg-white">
-        <span class="absolute top-3 left-6 h-8 w-8 border-2 border-slate-500 rounded-full necron:border-lime-800
-            text-lime-400 necron:text-black flex flex-col justify-center items-center">
-            {!! $post->svg ?? '' !!}
-        </span>
+    <div class="border-b-2 border-slate-500 mb-4 necron:border-lime-800 dark:bg-slate-700 necron:bg-white
+            dark:text-lime-400 flex flex-row items-center relative pl-8 justify-around">
+        <x-three-lines classes="" />
 
-        <div class="text-xl pl-16 font-bold py-3 necron:text-black text-lime-400">
+        <div class="text-xl font-bold py-3 necron:text-black text-center relative">
+
             {{ $post->title ?? ''}}
+
         </div>
+
+        <div class="border-2 h-8 w-8 border-slate-500 rounded-full necron:border-lime-800
+             necron:text-black flex flex-col justify-center items-center text-lime-400 bg-slate-500
+            justify-self-end">
+            {!! $post->svg ?? '' !!}
+        </div>
+
 
     </div>
 

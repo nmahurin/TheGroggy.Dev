@@ -6,15 +6,13 @@ use App\Models\Posts;
 use Livewire\Component;
 
 class ProjectsWire extends Component{
-    public $mainPosts = [];
-    public $subPosts = [];
+    public $posts = [];
 
     public function render(){
 
         //$this->fillPosts();
 
-        /*$this->mainPosts = Posts::where('location', 1)->get();
-        $this->subPosts = Posts::where('location', 2)->get();*/
+        //$this->posts = Posts::get();
 
         return view('livewire.projects-wire')
             ->layout('layouts.main');
@@ -23,15 +21,14 @@ class ProjectsWire extends Component{
 
     public function mount(){
         $this->fill([
-            'mainPosts' => Posts::where('location', 1)->get(),
-            'subPosts' => Posts::where('location', 2)->get()
+            'posts' => Posts::get(),
         ]);
     }
 
     /** Only necessary after DB migrations */
     public function fillPosts(){
-        $this->mainPosts = [
-            [
+        $this->posts = [
+            /*[
                 'title' => 'About',
                 'order' => 1,
                 'description' => 'Lean Infrastructure with Maximum Efficiency (LIME desk LAMP)',
@@ -43,15 +40,15 @@ class ProjectsWire extends Component{
                   <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                 </svg>',
                 'body' => 'Contains a rough overview of the Pi Lamp Stack and some of the goals for this site. Author information, links to tools and packages used on this site, and other information will be found here',
-            ],
+            ],*/
             [
                 'title' => 'Lime Desk Lamp',
-                'order' => 2,
+                'order' => 1,
                 'description' => 'A tiny Pi powered LAMP stack!',
                 'url' => '/lime-desk-lamp',
                 'shown' => 1,
                 'location' => 1,
-                'span' => 1,
+                'span' => 2,
                 'svg' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
                 </svg>',
@@ -59,7 +56,7 @@ class ProjectsWire extends Component{
             ],
             [
                 'title' => 'Dashboard',
-                'order' => 3,
+                'order' => 2,
                 'description' => 'Everybody loves reports',
                 'url' => '/dashboard',
                 'shown' => 1,
@@ -72,7 +69,7 @@ class ProjectsWire extends Component{
             ],
             [
                 'title' => 'Migration Maker',
-                'order' => 4,
+                'order' => 3,
                 'description' => 'Tool for building Laravel Migrations',
                 'url' => '/migration-maker',
                 'shown' => 1,
@@ -81,11 +78,12 @@ class ProjectsWire extends Component{
                 'svg' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>',
-                'img' => '<div class="h-20 mx-6 border-2 border-slate-500 bg-slate-700 rounded-lg overflow-hidden text-center necron:bg-lime-800 
+                'img' => '<div class="h-20 mx-6 border-2 border-slate-500 rounded-lg overflow-hidden text-center necron:bg-lime-800 
                                 necron:border-lime-700 flex flex-col items-center justify-center">
-                            <div class="w-20 h-20 rounded-full flex flex-col items-center justify-center bg-slate-800 text-lime-400 
+                            <div class="w-20 h-20 rounded-full flex flex-col items-center justify-center bg-slate-500 dark:bg-slate-800 text-lime-400 
                                     necron:text-lime-800 necron:bg-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 fill-current group-hover:fill-lime-400" viewBox="0 0 20 20">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 group-hover:fill-lime-400" viewBox="0 0 20 20"
+                                        fill="currentColor">
                                     <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
                                     <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
                                     <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
@@ -95,7 +93,7 @@ class ProjectsWire extends Component{
             ],
             [
                 'title' => 'Pi Rack',
-                'order' => 5,
+                'order' => 4,
                 'description' => 'A 3D printed rack for the pi',
                 'url' => '/pi-rack',
                 'shown' => 1,
@@ -106,8 +104,6 @@ class ProjectsWire extends Component{
                 </svg>',
                 'body' => 'For scalability a rack will be made to house the pi module with a custom power delivery system. The goal being to have at least 2 pi modules running this server together doing various different functions. One handling storage and the database/redis while the other hosts apache, etc. Another experiment down the line is to see if it is possible to load balance these.',
             ],
-        ];
-        $this->subPosts = [
             [
                 'title' => 'Desktop Power Supply',
                 'order' => 5,
@@ -123,10 +119,7 @@ class ProjectsWire extends Component{
             ],
         ];
 
-        foreach($this->mainPosts as $item){
-            Posts::firstOrCreate($item);
-        }
-        foreach($this->subPosts as $item){
+        foreach($this->posts as $item){
             Posts::firstOrCreate($item);
         }
     }

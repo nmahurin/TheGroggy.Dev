@@ -30,12 +30,12 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/account', AccountPageWire::class);
 });
 
-Route::get('/projects', ProjectsWire::class);
-Route::get('/lime-desk-lamp', LimeLampWire::class);
-Route::get('/migration-maker', MigrationMakerWire::class);
-Route::get('/about', AboutItemsWire::class);
-Route::get('/pi-rack', PieRackWire::class);
-Route::get('/desktop-power-supply', DesktopPowerSupplyWire::class);
+Route::get('/projects', ProjectsWire::class)->name('projects');
+Route::get('/lime-desk-lamp', LimeLampWire::class)->name('lime-desk-lamp');
+Route::get('/migration-maker', MigrationMakerWire::class)->name('migration-maker');
+Route::get('/about', AboutItemsWire::class)->name('about');
+Route::get('/pi-rack', PieRackWire::class)->name('pi-rack');
+Route::get('/desktop-power-supply', DesktopPowerSupplyWire::class)->name('desktop-power-supply');
 
 /** My routes, for editing the pages */
 Route::middleware(['auth', 'editor'])->group(function(){

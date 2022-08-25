@@ -44,8 +44,31 @@
                     this.smMenu = 'h-full';
                 }
             },
-            toggleSubMiniNav(){
 
+            currentSlide: 1,
+            transitionSlide( direction ){
+                if(direction == 1){
+                    this.currentSlide++;
+                }else{
+                    this.currentSlide--;
+                }
+            },
+            pickSlide( id ){
+                this.currentSlide = id;
+            },
+            goRight(){
+                if(this.currentSlide < 9){
+                    this.transitionSlide(1);
+                }else{
+                    this.pickSlide(1);
+                }
+            },
+            goLeft(){
+                if(this.currentSlide > 1){
+                    this.transitionSlide(2);
+                }else{
+                    this.pickSlide(9);
+                }
             }
 
         }))
