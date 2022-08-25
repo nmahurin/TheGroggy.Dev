@@ -8,7 +8,8 @@ class MainPageWire extends Component{
 
 
     public function render(){
-        return view('livewire.main-page-wire')->layout('layouts.main');
+        return view('livewire.main-page-wire')
+            ->layout('layouts.main');
     }
 
 

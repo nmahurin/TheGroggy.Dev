@@ -1,63 +1,16 @@
 <div class="main-slot"
 x-data="{
-    currentSlide: 1,
-    transitionSlide( direction ){
-        if(direction == 1){
-            this.currentSlide++;
-        }else{
-            this.currentSlide--;
-        }
-    },
-    pickSlide( id ){
-        this.currentSlide = id;
-    },
-    goRight(){
-        if(this.currentSlide < 9){
-            this.transitionSlide(1);
-        }else{
-            this.pickSlide(1);
-        }
-    },
-    goLeft(){
-        if(this.currentSlide > 1){
-            this.transitionSlide(2);
-        }else{
-            this.pickSlide(9);
-        }
-    }
+
 }">
 
-    <div class="grid grid-col-1 gap-4">
-
-        <header class="flex flex-row lg:justify-around bg-slate-700 p-2 overflow-x-auto scrollbar w-[95vw] lg:w-full
-            dark:bg-slate-800 gap-2 p-4 rounded-lg">
-            @foreach($aboutItems as $item)
-
-                <div class="p-4 border border-solid border-lime-400 rounded-md flex flex-col gap-4 justify-center
-                    hover:bg-slate-800
-                    items-center cursor-pointer dark:hover:bg-slate-700"
-                     :class="currentSlide == {{ $item['order'] }} ? 'dark:bg-slate-700' : 'bg-slate-800' "
-                    @click="pickSlide({{ $item['order'] }})">
-
-                    <div class="h-12 w-12 bg-slate-100 rounded-full p-2 border-2 border-white border-solid">
-                        @include('svg.' . $item['svg'], ['classes' => 'text-lime-400'])
-                    </div>
-
-                    <p class="text-center text-white">
-                        {{ $item['title'] }}
-                    </p>
-
-                </div>
-
-            @endforeach
-        </header>
+    <div class="grid grid-col-1 gap-4 text-slate-900 dark:text-white py-4">
 
         <div class="flex flex-row justify-center gap-4 border-t-2 border-t-slate-500 border-solid border-b-2
-            bg-slate-800 border-b-slate-500 p-4">
+            dark:bg-slate-700 border-b-slate-500 p-4">
             @foreach($aboutItems as $item)
-                <span class="rounded-full bg-slate-700 h-4 w-4 border border-lime-400 border-solid cursor-pointer
-                    hover:bg-lime-50"
-                    :class="currentSlide == {{ $item['order'] }} ? 'bg-lime-50' : '' "
+                <span class="rounded-full dark:bg-slate-700 h-4 w-4 border dark:border-lime-400 border-solid cursor-pointer
+                    border-slate-500 hover:bg-slate-500 dark:hover:bg-lime-50"
+                    :class="currentSlide == {{ $item['order'] }} ? 'dark:bg-lime-50 bg-slate-500' : '' "
                     @click="pickSlide({{ $item['order'] }})">
 
                 </span>
@@ -65,8 +18,8 @@ x-data="{
         </div>
 
         <div class="plain-text-box transition relative h-screen">
-            <div class="border border-slate-800 bg-slate-700 absolute h-24 w-12 top-1/2 bottom-1/2 left-0
-                rounded-md cursor-pointer z-10"
+            <div class="border border-slate-800 dark:bg-slate-700 absolute h-20 w-8 top-1/2 bottom-1/2 left-1
+                rounded-md cursor-pointer z-10 text-slate-900"
                 @click="goLeft()">
 
                 <svg class="h-full w-full rotate-180" fill="currentColor" viewBox="0 0 91 91" id="Layer_1" style="enable-background:new 0 0 91 91;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -89,11 +42,19 @@ x-data="{
                      x-show=" currentSlide == {{ $item['order'] }} ">
 
 
-                    <p class="text-2xl mb-4 text-lime-400 bg-slate-700 p-5">
-                        {{ $item['title'] }}
-                    </p>
+                    <div class="border-b-2 border-slate-500 mb-4 necron:border-lime-800 dark:bg-slate-700 necron:bg-white
+                        dark:text-lime-400 flex flex-row items-center relative pl-8 justify-around">
+                        <x-three-lines classes="" />
+                        <div class="text-xl font-bold py-3 necron:text-black text-center relative">
+                            {{ $item['title'] }}
+                        </div>
 
-                    <p class="indent-4 p-5">
+                    </div>
+                    {{--<p class="text-2xl mb-4 text-slate-50 dark:text-lime-400 bg-slate-500 p-5">
+                        {{ $item['title'] }}
+                    </p>--}}
+
+                    <p class="indent-4 p-5 px-12">
                         {{ $item['body'] }}
                     </p>
 
@@ -102,8 +63,8 @@ x-data="{
             @endforeach
 
 
-            <div class="border border-slate-800 bg-slate-700 absolute h-24 w-12 top-1/2 bottom-1/2 right-0
-                rounded-md cursor-pointer z-10"
+            <div class="border border-slate-800 dark:bg-slate-700 absolute h-20 w-8 top-1/2 bottom-1/2 right-1
+                rounded-md cursor-pointer z-10 text-slate-900"
                 @click="goRight()">
 
                 <svg class="h-full w-full" fill="currentColor" viewBox="0 0 91 91" id="Layer_1" style="enable-background:new 0 0 91 91;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -116,11 +77,13 @@ x-data="{
         </div>
 
         <div class="flex flex-row justify-center gap-4 border-t-2 border-t-slate-500 border-solid border-b-2
-                bg-slate-800 border-b-slate-500 p-4">
+                    dark:bg-slate-700 border-b-slate-500 p-4">
             @foreach($aboutItems as $item)
-                <span class="rounded-full bg-slate-700 h-4 w-4 border border-lime-400 border-solid cursor-pointer"
-                      :class="currentSlide == {{ $item['order'] }} ? 'bg-lime-50' : '' "
+                <span class="rounded-full dark:bg-slate-700 h-4 w-4 border dark:border-lime-400 border-solid cursor-pointer
+                            border-slate-500 hover:bg-slate-500 dark:hover:bg-lime-50"
+                      :class="currentSlide == {{ $item['order'] }} ? 'dark:bg-lime-50 bg-slate-500' : '' "
                 @click="pickSlide({{ $item['order'] }})">
+
                 </span>
             @endforeach
         </div>
