@@ -6,8 +6,8 @@
 @if(isset($post->url))
     <a href="{{ $post->url }}">
 @endif
-    <div class="border-b-2 border-slate-500 mb-4 necron:border-lime-800 dark:bg-slate-700 necron:bg-white
-            dark:text-lime-400 flex flex-row items-center relative pl-8 justify-around">
+    <div class="border-b-2 border-slate-500 px-8 mb-4 necron:border-lime-800 dark:bg-slate-700 necron:bg-white
+            dark:text-lime-400 flex flex-row items-center relative justify-between group">
         <x-three-lines classes="" />
 
         <div class="text-xl font-bold py-3 necron:text-black text-center relative">
@@ -17,8 +17,7 @@
         </div>
 
         <div class="border-2 h-8 w-8 border-slate-500 rounded-full necron:border-lime-800
-             necron:text-black flex flex-col justify-center items-center text-lime-400 bg-slate-500
-            justify-self-end">
+             necron:text-black flex flex-col justify-center items-center text-lime-400 bg-slate-500">
             {!! $post->svg ?? '' !!}
         </div>
 

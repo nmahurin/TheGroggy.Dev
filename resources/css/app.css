@@ -34,10 +34,6 @@
             dark:bg-slate-800 dark:border-slate-100;
     }
 
-    .mini-nav-no-subs{
-
-    }
-
     .page-header-box{
         @apply my-6 md:mx-5 py-6 px-1 rounded-lg bg-slate-700 border-white border-4 border-solid text-3xl
                 text-white text-center
@@ -46,7 +42,7 @@
     }
 
     .plain-text-box{
-        @apply p-4 border-2 border-slate-500 bg-white rounded-md indent-4
+        @apply p-4 border-b-2 border-slate-500 bg-white rounded-md indent-4
             dark:bg-slate-800 dark:text-white
             necron:bg-lime-50 necron:border-lime-800;
     }
@@ -69,6 +65,10 @@
 @layer utilities{
     [x-cloak] {
         display:none;
+    }
+
+    .main-page-reflection{
+        transform: perspective(1em) rotateX(20deg) scale(1, 0.35);
     }
 
     .scrollbar::-webkit-scrollbar {

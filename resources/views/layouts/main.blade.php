@@ -11,16 +11,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('css/tailwindoutput.css') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
-    {{--<script defer src="./node_modules/tw-elements/dist/js/index.min.js"></script>--}}
     @livewireStyles
 </head>
-<body class="font-sans antialiased scrollbar" x-data="mainPage" :class="showSmMenu? 'overflow-y-hidden' : ''">
+<body class="font-sans antialiased scrollbar text-slate-900" x-data="mainPage"
+      :class="showSmMenu? 'overflow-y-hidden' : ''" x-cloak>
 
     <!-- Page Content -->
     <main :class="[
@@ -30,19 +29,32 @@
             ]"
             {{--@click="showMailModal = false"--}}>
 
-        <header class="flex flex-row w-full h-16 lg:h-24 bg-slate-50 dark:bg-slate-800 dark:border-lime-400
-                    sticky top-0 z-50 border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800
-                    {{ Route::current()->getName() == 'index' ? 'hidden' : '' }}">
-            <a href="/" class="text-3xl lg:text-5xl text-bold pl-4 md:pl-12 dark:text-white necron:text-white pt-4">
-                The<span class="dark:text-lime-400">Groggy</span>.Dev
-            </a>
+        <header class="sticky top-0 z-50 bg-transparent
+                    {{ Route::current()->getName() == 'index' ? ' hidden ' : '' }}">
+
+            <div class="h-16 lg:h-20 bg-slate-50 dark:bg-transparent dark:border-lime-400 pl-4 md:pl-12 py-4 lg:w-1/6
+                border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800 absolute top-0 left-0
+                 hover:shadow-the-groggy-glow rounded-md">
+
+                <a href="/" class="text-3xl text-bold dark:text-white necron:text-white text-slate-500">
+
+                    The<span class="dark:text-lime-400">Groggy</span>.Dev
+
+                </a>
+
+            </div>
 
             @livewire('navigation-wire')
 
             @livewire('mini-nav-wire')
 
             @livewire('mail-modal-wire')
+
+            <x-theme-toggles />
+
         </header>
+
+        <x-content.main-page-theme />
 
 
         <div class="flex flex-col lg:flex-row">
@@ -63,10 +75,6 @@
 
 
         <x-content.footer />
-
-
-        <x-theme-toggles />
-
 
     </main>
 
