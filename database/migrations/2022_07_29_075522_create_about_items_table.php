@@ -15,9 +15,11 @@ class CreateAboutItemsTable extends Migration
     {
         Schema::create('about_items', function (Blueprint $table) {
             $table->id();
-            $table->string('header')->nullable();
+            $table->string('title');
             $table->string('location');
             $table->integer('shown');
+            $table->string('svg');
+            $table->int('order');
             $table->longText('body')->nullable();
             $table->timestamps();
         });

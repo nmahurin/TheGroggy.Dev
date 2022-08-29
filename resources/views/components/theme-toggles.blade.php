@@ -1,4 +1,4 @@
-<div class="hidden fixed bottom-0 right-2 lg:block flex flex-col z-20">
+<div class="hidden fixed top-20 left-4 lg:block flex flex-col z-20 justify-center w-1/6">
 
     <div class="flex flex-row rounded-full h-8 w-12 p-0.5 text-gray-800 dark:text-white
         border-2 border-black dark:bg-slate-800 bg-slate-100 necron:bg-lime-100 necron:border-lime-800
@@ -14,8 +14,8 @@
 
     </div>
 
-
-    <div class="flex flex-row p-0.5 h-8 w-12 rounded-full border-2 border-black dark:bg-slate-800
+</div>
+    {{--<div class="flex flex-row p-0.5 h-8 w-12 rounded-full border-2 border-black dark:bg-slate-800
         bg-slate-100 necron:bg-lime-100 necron:border-lime-800 my-1"
          id="necronSwitch"
     @click="toggleTheme('necron')"
@@ -23,12 +23,12 @@
         <span class="transition-transform h-6 w-6 rounded-full bg-lime-400 dark:bg-lime-400"
             :class="[themes.necron? 'translate-x-4' : '']">
         </span>
-    </div>
+    </div>--}}
 
 
     {{-- For now this is ignored unless I'm logged in, going to be neat when the auth is set up to support it.  --}}
     @if(\Auth::check() && \Auth::user()->id == 1)
-        <div class="flex flex-row p-0.5 h-8 w-12 rounded-full border-2 border-black dark:bg-slate-800
+        {{--<div class="flex flex-row p-0.5 h-8 w-12 rounded-full border-2 border-black dark:bg-slate-800
         bg-slate-100 necron:bg-lime-100 necron:border-lime-800 my-1"
              id="devSwitch"
             @click="toggleDev()"
@@ -36,6 +36,5 @@
             <span class="transition-transform h-6 w-6 rounded-full bg-violet-500 necron:bg-violet-500"
                   :class="[dev? 'translate-x-4' : '']">
             </span>
-        </div>
+        </div>--}}
     @endif
-</div>

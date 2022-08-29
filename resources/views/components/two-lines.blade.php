@@ -4,6 +4,4 @@
         transition duration-400"></div>
     <div class="w-4 border-b-2 border-solid border-slate-500 group-hover:scale-x-200 group-hover:border-lime-400
         transition duration-400"></div>
-    <div class="w-6 border-b-2 border-solid border-slate-500 group-hover:scale-x-200 group-hover:border-lime-400
-        transition duration-400"></div>
 </div>

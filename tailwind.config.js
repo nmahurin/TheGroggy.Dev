@@ -24,6 +24,27 @@ module.exports = {
             colors: {
                 transparent: 'transparent'
             },
+            boxShadow:{
+                // in order: x offset, y offset, blur size, spread size, color
+                // blur size / spread size are optional
+                'main-buttons': '0 10px 35px -5px #a3e635',
+                'nav-buttons': '0 10px 15px -10px #a3e635',
+                'small-glow': '0 0 3px 3px #a3e635',
+                'the-groggy-glow': '0 10px 35px 0 #a3e635, inset 0 -10px 15px -10px #a3e635',
+                'main-page-theme': '0 0 35px -35px #a3e635, inset 0 0 10px 0 #a3e635'
+            },
+            scale: {
+                '200': '2',
+            },
+            transform: {
+                'perspective-1': 'perspective(1em) rotateX(40deg) scale(1, 0.35);'
+            },
+            transitionDelay: {
+                '0': '0ms',
+                '1500': '1500ms',
+                '2000': '2000ms',
+                '2500': '2500ms'
+            }
         },
     },
 
