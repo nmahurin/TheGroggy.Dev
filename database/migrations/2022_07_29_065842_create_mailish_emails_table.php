@@ -19,6 +19,7 @@ class CreateMailishEmailsTable extends Migration
             $table->text('from');
             $table->text('subject');
             $table->longText('body');
+            $table->integer('conversation'); // To keep track of reply chains
             $table->integer('status'); // should house things like read/replied
             $table->timestamps();
         });

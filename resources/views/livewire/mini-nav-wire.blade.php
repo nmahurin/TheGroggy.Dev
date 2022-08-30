@@ -12,7 +12,7 @@
 
         <div class="flex flex-row gap-2 items-center content-center w-full justify-around">
 
-            @include('stubs.dark-mode-toggle')
+            <x-theme-toggles />
 
             <a href="/account" class="flex py-3 px-6 text-white bg-slate-700 rounded-md border-white border-2
                 dark:bg-slate-800">

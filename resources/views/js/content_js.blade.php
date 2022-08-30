@@ -7,8 +7,8 @@
             dev: '',
             @endif
             themes:{
-                dark: localStorage.getItem('dark') ?? '',
-                necron: localStorage.getItem('necron') ?? '',
+                dark: localStorage.getItem('dark') ?? false,
+                necron: localStorage.getItem('necron') ?? false,
             },
             showSmMenu: false,
             smMenu: '',
