@@ -1,7 +1,7 @@
 <div class=" z-20 group lg:cursor-pointer
     {{ Route::current()->getName() != 'index' ? ' fixed top-0 right-4 h-52 w-52 ' :
         ' absolute lg:block h-52 w-52 top-4 lg:top-40 right-4 lg:right-1/4 ' }}"
-    @click="themes.dark = ! themes.dark; localStorage.setItem('dark', themes.dark)"
+    @click="toggleTheme('dark')"
     >
 
     <div class="w-28 h-28 group-hover:scale-110 rounded-full text-slate-800 p-6 transition absolute
