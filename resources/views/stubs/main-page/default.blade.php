@@ -2,9 +2,9 @@
          hover:scale-105 transition-transform duration-300 hover:bg-slate-700
          necron:hover:bg-white hover:text-white necron:hover:text-black necron:border-white
          dark:border-white
-        dark:bg-slate-800 dark:text-white md:col-span-{{ $post->span }}">
-@if(isset($post->url))
-    <a href="{{ $post->url }}">
+        dark:bg-slate-800 dark:text-white md:col-span-{{ $project->span }}">
+@if(isset($project->url))
+    <a href="{{ $project->url }}">
 @endif
     <div class="border-b-2 border-slate-500 px-8 mb-4 necron:border-lime-800 dark:bg-slate-700 necron:bg-white
             dark:text-lime-400 flex flex-row items-center relative justify-between group">
@@ -12,27 +12,27 @@
 
         <div class="text-xl font-bold py-3 necron:text-black text-center relative">
 
-            {{ $post->title ?? ''}}
+            {{ $project->title ?? ''}}
 
         </div>
 
         <div class="border-2 h-8 w-8 border-slate-500 rounded-full necron:border-lime-800
              necron:text-black flex flex-col justify-center items-center text-lime-400 bg-slate-500">
-            {!! $post->svg ?? '' !!}
+            {!! $project->svg ?? '' !!}
         </div>
 
 
     </div>
 
     <div class="m-5 font-bold">
-        {{ $post->description ?? '' }}
+        {{ $project->description ?? '' }}
     </div>
 
     <div class="m-5 max-h-32 overflow-hidden md:overflow-y-scroll md:hidden-scrollbar md:hover:scrollbar">
-        {!! $post->body ?? $post->img ?? '' !!}
+        {!! $project->body ?? $project->img ?? '' !!}
     </div>
 
-    @if(strlen($post->body ?? '') >= 180)
+    @if(strlen($project->body ?? '') >= 180)
         <span class="group-hover:hidden absolute bottom-6 right-10 h-6 w-6 border-2 border-slate-500 text-center
             text-slate-500 rounded-full justify-center necron:border-lime-800">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -40,7 +40,7 @@
             </svg>
         </span>
     @endif
-@if(isset($post->url))
+@if(isset($project->url))
 </a>
 @endif
 </div>

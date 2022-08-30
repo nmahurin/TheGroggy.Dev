@@ -1,4 +1,4 @@
-<div class="main-slot pt-20 lg:pt-auto">
+<div class="main-slot">
 
     {{--<div class="grid grid-col-1 gap-4 text-slate-900 dark:text-white py-4 relative">--}}
 

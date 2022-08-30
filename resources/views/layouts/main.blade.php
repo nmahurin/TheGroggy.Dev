@@ -29,12 +29,12 @@
             ]"
             {{--@click="showMailModal = false"--}}>
 
-        <header class="sticky top-0 z-50 bg-transparent
+        <header class="sticky top-0 z-50 bg-slate-200 dark:bg-slate-700 lg:bg-transparent
                     {{ Route::current()->getName() == 'index' ? ' hidden ' : '' }}">
 
-            <div class="h-16 lg:h-20 bg-slate-50 dark:bg-transparent dark:border-lime-400 pl-4 md:pl-12 py-4 lg:w-1/6
-                border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800 absolute top-0 left-0
-                 hover:shadow-the-groggy-glow rounded-md">
+            <div class="h-16 lg:h-20 bg-slate-50 dark:bg-slate-700 lg:dark:bg-transparent dark:border-lime-400 pl-4
+                md:pl-12 py-4 w-full lg:w-1/6 border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800 absolute
+                top-0 left-0 hover:shadow-the-groggy-glow rounded-md">
 
                 <a href="/" class="text-3xl text-bold dark:text-white necron:text-white text-slate-500">
 
@@ -50,11 +50,11 @@
 
             @livewire('mail-modal-wire')
 
-            <x-theme-toggles />
-
         </header>
 
-        <x-content.main-page-theme />
+        <div class="{{ Route::current()->getName() != 'index' ? ' hidden lg:block ' : '' }}">
+            <x-content.main-page-theme />
+        </div>
 
 
         <div class="flex flex-col lg:flex-row">

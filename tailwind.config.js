@@ -34,6 +34,7 @@ module.exports = {
                 'main-page-theme': '0 0 35px -35px #a3e635, inset 0 0 10px 0 #a3e635'
             },
             scale: {
+                '115': '1.15',
                 '200': '2',
             },
             transform: {
@@ -44,7 +45,7 @@ module.exports = {
                 '1500': '1500ms',
                 '2000': '2000ms',
                 '2500': '2500ms'
-            }
+            },
         },
     },
 
