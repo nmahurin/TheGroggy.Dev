@@ -1,4 +1,4 @@
-<div class="main-slot relative bg-slate-100 basis-full">
+<div class="main-slot pt-0 relative bg-slate-100 basis-full">
 
     <div class="hidden dev:block h-24 text-3xl text-center dark:text-white">
         Dev Message

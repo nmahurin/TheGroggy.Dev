@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\AboutItems;
-use App\Models\Posts;
+use App\Models\Projects;
 use Livewire\Component;
 
 class NavigationWire extends Component{
@@ -86,7 +86,7 @@ class NavigationWire extends Component{
                     'body' => 'Pharetra massa massa ultricies mi quis hendrerit. Rhoncus urna neque viverra justo nec ultrices. Sed cras ornare arcu dui vivamus. Adipiscing elit pellentesque habitant morbi. Sit amet tellus cras adipiscing enim eu turpis egestas pretium. Quisque egestas diam in arcu. Vitae nunc sed velit dignissim sodales ut eu sem integer. Ut etiam sit amet nisl purus. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Aliquam faucibus purus in massa. Vitae tortor condimentum lacinia quis vel eros donec ac. Id porta nibh venenatis cras. Ut placerat orci nulla pellentesque dignissim enim sit. Pellentesque habitant morbi tristique senectus et. Scelerisque mauris pellentesque pulvinar pellentesque habitant. Ultrices sagittis orci a scelerisque purus semper eget duis. In arcu cursus euismod quis viverra nibh cras pulvinar. Eget nullam non nisi est sit amet facilisis magna etiam. Neque convallis a cras semper auctor neque vitae tempus.',
                 ]
             ],
-            'projects' => Posts::get(),
+            'projects' => Projects::get(),
             /*[
                 'name' => 'Dashboard',
                 'url' => '/dashboard'

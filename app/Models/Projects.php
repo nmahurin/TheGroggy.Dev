@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model{
+class Projects extends Model{
     use HasFactory;
 
     static function booted(){
         static::creating(function($post){
             if( !isset($post->attributes['order']) ){
-                $post->attributes['order'] = Posts::orderByDesc('order')->first()->order;
+                $post->attributes['order'] = Projects::orderByDesc('order')->first()->order;
             }
         });
 

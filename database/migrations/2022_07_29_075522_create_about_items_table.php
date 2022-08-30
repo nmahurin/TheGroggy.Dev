@@ -19,7 +19,7 @@ class CreateAboutItemsTable extends Migration
             $table->string('location');
             $table->integer('shown');
             $table->string('svg');
-            $table->int('order');
+            $table->integer('order');
             $table->longText('body')->nullable();
             $table->timestamps();
         });

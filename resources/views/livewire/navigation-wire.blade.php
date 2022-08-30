@@ -3,24 +3,27 @@
     {{--{{ dd(Request::url(), Request::is('*' . 'migration-maker')) }}--}}
     <div class="flex flex-col">
 
-        <x-main-page-buttons link="/about" text="About" classes="w-full dark:bg-slate-700 bg-slate-100
+        <x-big-nav-buttons link="/about" text="About" classes="w-full dark:bg-slate-700 bg-slate-100
             {{ Route::current()->getName() == 'about' ? ' mb-4 ' : '' }}" />
 
         @if(Route::current()->getName() == 'about')
-            @foreach($subMenus['about'] as $subMenu)
+            @foreach($subMenus['about'] as $key => $subMenu)
 
-                <div class="cursor-pointer rounded-md p-2 dark:text-white dark:hover:text-lime-400
+                <div class="cursor-pointer rounded-md py-1 dark:hover:text-lime-400
                     hover:border-b-2 hover:border-solid hover:border-lime-400
                     hover:scale-105 transition duration-75 active:scale-100 hover:z-40
                     hover:bg-slate-500 dark:hover:bg-slate-800 hover:text-lime-400 items-center z-20
-                    hover:shadow-nav-buttons relative group"
+                    hover:shadow-nav-buttons relative group {{ $key == 1 ? 'hidden' : '' }}"
                      :class="currentSlide == {{ $subMenu['order'] }} ?
-                        'dark:bg-slate-800 bg-slate-500 text-lime-400'
-                        : '' "
+                        'dark:bg-slate-800 bg-slate-500 text-lime-400 border-b-2 border-solid border-lime-400'
+                        : 'dark:text-white' "
                     @click="pickSlide({{ $subMenu['order'] }})">
 
                         {{ $subMenu['title'] ?? '' }}
-                        <x-two-lines classes="opacity-0 group-hover:opacity-100 " />
+                    <div class="group-hover:opacity-100"
+                        :class="currentSlide == {{ $subMenu['order'] }} ? 'opacity-100' : 'opacity-0' ">
+                        <x-two-lines classes="" />
+                    </div>
 
                 </div>
 
@@ -31,7 +34,7 @@
 
     <div class="flex flex-col">
 
-        <x-main-page-buttons link="/projects" text="Projects" classes="w-full dark:bg-slate-700 bg-slate-100
+        <x-big-nav-buttons link="/projects" text="Projects" classes="w-full dark:bg-slate-700 bg-slate-100
             {{ Route::current()->getName() == 'projects' ? ' mb-4 ' : '' }}" />
 
         @if(in_array(Route::current()->getName(), ['projects', 'lime-desk-lamp', 'migration-maker', 'pi-rack',
@@ -60,7 +63,7 @@
 
     <div class="flex flex-col">
 
-        <x-main-page-buttons link="/dashboard" text="Dashboard" classes="w-full dark:bg-slate-700 bg-slate-100" />
+        <x-big-nav-buttons link="/dashboard" text="Dashboard" classes="w-full dark:bg-slate-700 bg-slate-100" />
 
     </div>
 
