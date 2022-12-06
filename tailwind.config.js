@@ -30,6 +30,7 @@ module.exports = {
                 'main-buttons': '0 10px 35px -5px #a3e635',
                 'nav-buttons': '0 10px 15px -10px #a3e635',
                 'small-glow': '0 0 3px 3px #a3e635',
+                'small-dark': '0 0 3px 3px #1e293b',
                 'the-groggy-glow': '0 10px 35px 0 #a3e635, inset 0 -10px 15px -10px #a3e635',
                 'main-page-theme': '0 0 35px -35px #a3e635, inset 0 0 10px 0 #a3e635'
             },

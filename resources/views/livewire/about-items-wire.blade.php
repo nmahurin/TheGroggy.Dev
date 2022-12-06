@@ -5,8 +5,8 @@
 
 
         <div class="px-4 border-b-2 border-slate-500 bg-slate-300 rounded-md indent-4
-            dark:bg-slate-800 dark:text-white
-            necron:bg-lime-50 necron:border-lime-800 transition relative h-screen">
+            dark:bg-slate-700 dark:text-white
+            necron:bg-lime-50 necron:border-lime-800 transition relative h-[90%] mt-[5%] mb-[5%]">
 
             <div class="flex flex-row justify-center gap-4 lg:gap-8
             dark:bg-slate-700 p-4 absolute top-0 w-1/2 left-0 right-0 mx-auto rounded-md">
@@ -46,12 +46,12 @@
                      x-show=" currentSlide == {{ $item['order'] }} ">
 
 
-                    <div class="border-b-2 border-l-2 border-slate-500 mb-4 necron:border-lime-800 dark:bg-slate-700
+                    <div class="border-t-2 border-slate-500 mb-4 necron:border-lime-800 dark:bg-slate-700
                         py-2
                         necron:bg-white dark:text-lime-400 relative pl-8
                         rounded-md group">
 
-                        <x-three-lines classes="" />
+                        <x-three-lines classes="bottom-8" />
 
                         <div class="text-2xl font-bold py-3 necron:text-black">
                             {{ $item['title'] }}

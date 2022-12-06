@@ -6,24 +6,24 @@
 
     <div class="w-28 h-28 group-hover:scale-110 rounded-full text-slate-800 p-6 transition absolute
         z-20 cursor-pointer top-0 right-0 bottom-0 left-0  m-auto"
-         x-transition:enter="transition -translate-x-20 translate-y-20 duration-300 delay-0"
-         x-transition:enter-start="opacity-0"
-         x-transition:enter-end="opacity-20"
-         x-transition:leave="transition translate-x-20 -translate-y-20 duration-500 delay-0"
-         x-transition:leave-start="opacity-40"
-         x-transition:leave-end="opacity-0"
+         {{--x-transition:enter="transition duration-300 delay-300"
+         x-transition:enter-start="scale-0"
+         x-transition:enter-end="scale-100"
+         x-transition:leave="transition duration-300 delay-0"
+         x-transition:leave-start="scale-100"
+         x-transition:leave-end="scale-0"--}}
          x-show=" ! themes.dark ">
         @include('svg.sun-outline')
     </div>
 
-    <div class="w-28 h-28 group-hover:scale-110 rounded-full text-lime-400 p-6 transition absolute delay-0
+    <div class="w-28 h-28 group-hover:scale-110 rounded-full text-lime-400 p-6 transition absolute
         z-20 cursor-pointer top-0 right-0 bottom-0 left-0  m-auto"
-         x-transition:enter="transition -translate-x-20 translate-y-20 duration-300 delay-0"
-         x-transition:enter-start="opacity-0"
-         x-transition:enter-end="opacity-60"
-         x-transition:leave="transition translate-x-20 -translate-y-20 duration-500 delay-0"
-         x-transition:leave-start="opacity-40"
-         x-transition:leave-end="opacity-0"
+         {{--x-transition:enter="transition duration-300 delay-300"
+         x-transition:enter-start="scale-0"
+         x-transition:enter-end="scale-100"
+         x-transition:leave="transition duration-300 delay-0"
+         x-transition:leave-start="scale-100"
+         x-transition:leave-end="scale-0"--}}
          x-show=" themes.dark ">
 
         @include('svg.moon-outline')

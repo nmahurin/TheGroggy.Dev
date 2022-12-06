@@ -5,7 +5,7 @@
                     p-3 hover:bg-slate-500 dark:hover:bg-slate-800 rounded-md hover:text-lime-400
                     dark:hover:text-lime-400 dark:text-white relative group
                     hover:scale-105 transition duration-75 active:scale-100
-                    hover:border-lime-400 dark:hover:border-lime-400 border-l-2 ' . $classes ?? '']) }}
+                    hover:border-lime-400 dark:hover:border-lime-400  ' . $classes ?? '']) }}
      >
     <button type="button" class="text-2xl">
         {{ $text }}

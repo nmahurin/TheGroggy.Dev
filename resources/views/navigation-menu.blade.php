@@ -1,11 +1,13 @@
-<nav x-data="{ open: false }" class="border-b-4 border-slate-900 dark:border-lime-400 bg-slate-700 dark:bg-slate-800 text-white">
+<nav x-data="{ open: false }" class="border-b-2 border-slate-900 dark:border-lime-400 bg-slate-700 dark:bg-slate-800
+        text-white">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 lg:h-20">
-            <div class="flex">
+
+        <div class="flex justify-between h-16">
+            <div class="grow flex flex-row gap-6">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="/" class="h-16 w-16 bg-slate-700 border-2
+                    <a href="/" class="h-12 w-12 bg-slate-700 border-2 hover:scale-105
                             text-lime-400 border-lime-400 p-2 rounded-full border-solid necron:bg-lime-50">
                         @include('svg.lime-4-minimalist-1')
                     </a>
@@ -16,12 +18,25 @@
                         ['name' => 'Dashboard', 'url' => 'dashboard'],
                         ['name' => 'Reports', 'url' => 'dashboard.reports']
                     ] as $link)
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route($link['url']) }}" class="active:bg-slate-800 active:text-lime-400
-                            text-white"
-                                        :active="request()->routeIs('dashboard')">
+                    <div class="sm:-my-px sm:ml-10 sm:flex relative group">
+
+                        <a href="{{ route($link['url']) }}" class="flex flex-row items-center
+                            group-hover:scale-105 active:scale-100 transition
+                            {{ Route::current()->getName() == $link['url'] ? ' text-lime-400 ' : ' text-white group-hover:text-lime-400 ' }}"
+                            >
                             {{ __($link['name']) }}
-                        </x-jet-nav-link>
+
+                            <span class="w-full absolute bottom-1/4 left-1 h-0.5 bg-slate-900
+                                group-hover:shadow-small-glow group-hover:scale-105 transition">
+                            </span>
+                        </a>
+
+                        {{--<x-jet-nav-link href="{{ route($link['url']) }}" class="active:bg-lime-800 active:text-lime-400
+                            text-white hover:text-lime-400"
+                                        :active=" Route::current()->getName() == $link['url'] ">
+                            {{ __($link['name']) }}
+                        </x-jet-nav-link>--}}
+
                     </div>
                 @endforeach
 
