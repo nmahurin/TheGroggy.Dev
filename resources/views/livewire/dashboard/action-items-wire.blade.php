@@ -1,5 +1,5 @@
 <div class="
-        {{ request()->routeIs('dashboard') ? 'bg-slate-100 dark:bg-slate-700' : 'bg-slate-100 dark:bg-slate-800' }}"
+        {{ request()->routeIs('dashboard') ? 'bg-slate-100 dark:bg-slate-700' : 'bg-slate-700 dark:bg-slate-800' }}"
      x-data="{
         actionItems: {{ json_encode($actionItems) }}
     }"
@@ -12,17 +12,18 @@
     </div>
 
     {{--@for($i = 0; $i < $actionsItems->count(); $i = $i + 4)--}}
-    <div class="flex flex-row justify-around
+    <div class="flex flex-row justify-around items-center
         {{ request()->routeIs('dashboard') ? 'p-5 gap-4' : 'p-2 gap-2' }}">
 
         @foreach($actionItems as $item)
 
             <a class="bg-slate-700 dark:bg-slate-800 border-{{ $item['level'] }} rounded-full p-2
-                border-2
+                border-2 group
                 dark:hover:bg-slate-900 border-solid relative cursor-pointer hover:text-{{ $item['level'] }} text-white"
                 href="{{ $item['url'] }}">
 
-                <div class="{{ request()->routeIs('dashboard') ? 'lg:w-20 lg:h-20' : 'h-10 w-10' }}">
+                <div class="group-hover:scale-105 active:scale-100 transition
+                    {{ request()->routeIs('dashboard') ? 'lg:w-20 lg:h-20' : 'h-8 w-8' }}">
                     @include('svg.' . $item['svg'], ['classes' => ''])
                 </div>
 

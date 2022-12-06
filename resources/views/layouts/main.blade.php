@@ -32,17 +32,17 @@
         <header class="sticky top-0 z-50 bg-slate-200 dark:bg-slate-700 lg:bg-transparent
                     {{ Route::current()->getName() == 'index' ? ' hidden ' : '' }}">
 
-            <div class="h-16 lg:h-20 bg-slate-50 dark:bg-slate-700 lg:dark:bg-transparent dark:border-lime-400 pl-4
-                md:pl-12 py-4 w-full lg:w-1/6 border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800 absolute
-                top-0 left-0 hover:shadow-the-groggy-glow rounded-md">
+            <a href="/" class="">
+                <div class="h-16 lg:h-20 bg-slate-100 dark:bg-slate-700 lg:dark:bg-transparent dark:border-lime-400
+                    py-4 w-full lg:w-1/5 border-b-4 border-slate-800 necron:border-lime-50 necron:bg-lime-800 absolute
+                    top-4 left-[3%] rounded-md group text-3xl text-bold dark:text-white necron:text-white text-slate-500
+                    flex flex-row gap-0 justify-center">
 
-                <a href="/" class="text-3xl text-bold dark:text-white necron:text-white text-slate-500">
+                        The<span class="dark:text-lime-400">Groggy</span>.Dev
 
-                    The<span class="dark:text-lime-400">Groggy</span>.Dev
 
-                </a>
-
-            </div>
+                </div>
+            </a>
 
             @livewire('navigation-wire')
 
@@ -60,7 +60,7 @@
         <div class="flex flex-col lg:flex-row">
             <div class="{{--lg:bg-side-image-2--}} bg-slate-100 dark:bg-slate-700 necron:bg-lime-300 lg:py-6 lg:px-6
                     bg-auto bg-center bg-repeat bg-origin-border z-10
-                    {{ Route::current()->getName() == 'index' ? 'hidden' : 'basis-1/6' }}">
+                    {{ Route::current()->getName() == 'index' ? 'hidden' : 'basis-1/4' }}">
 
             </div>
 
@@ -68,7 +68,7 @@
 
             <div class="flex-row {{--bg-side-image-2--}} dark:bg-slate-700 necron:bg-lime-300 bg-slate-100 py-6 px-6
                     bg-auto bg-center bg-repeat bg-origin-border z-10
-                    {{ Route::current()->getName() == 'index' ? 'hidden' : 'basis-1/6' }}">
+                    {{ Route::current()->getName() == 'index' ? 'hidden' : 'basis-1/4' }}">
 
             </div>
         </div>

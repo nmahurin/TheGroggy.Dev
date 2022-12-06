@@ -1,4 +1,4 @@
-<div class="absolute top-32 left-6 hidden max-h-[80vh] w-[15%]
+<div class="absolute top-32 left-[3%] hidden max-h-[80vh] w-1/5
     lg:block lg:flex lg:flex-col lg:gap-10 text-center">
     {{--{{ dd(Request::url(), Request::is('*' . 'migration-maker')) }}--}}
     <div class="flex flex-col">

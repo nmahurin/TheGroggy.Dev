@@ -31,7 +31,7 @@
 
         <x-jet-banner />
 
-        <div class="min-h-screen bg-slate-100 dark:bg-slate-800 z-0">
+        <div class="min-h-screen bg-slate-100 dark:bg-slate-700 z-0">
 
             @livewire('navigation-menu')
 
