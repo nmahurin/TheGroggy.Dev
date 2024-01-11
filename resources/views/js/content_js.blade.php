@@ -35,6 +35,7 @@
             showMailModal: false,
             toggleMailModal(){
                 this.showMailModal = ! this.showMailModal;
+                console.log(this.showMailModal);
             },
 
             {{-- The menu control on small devices--}}

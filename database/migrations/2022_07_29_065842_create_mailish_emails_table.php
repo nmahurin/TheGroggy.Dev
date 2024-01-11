@@ -13,11 +13,12 @@ class CreateMailishEmailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mailish_emails', function (Blueprint $table) {
+        Schema::create('mailish_emails', function (Blueprint $table){
             $table->id();
             $table->integer('to');
             $table->text('from');
             $table->text('subject');
+            $table->text('email');
             $table->longText('body');
             $table->integer('conversation'); // To keep track of reply chains
             $table->integer('status'); // should house things like read/replied

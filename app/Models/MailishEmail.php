@@ -11,7 +11,7 @@ class MailishEmail extends Model{
     use HasFactory;
 
     protected $fillable =[
-            'to', 'from', 'body', 'subject', 'status'
+            'to', 'from', 'body', 'subject', 'status', 'email'
         ];
 
     public function userFrom(){
