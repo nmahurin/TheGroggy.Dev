@@ -19,7 +19,8 @@
     @livewireStyles
 </head>
 <body class="font-sans antialiased scrollbar text-slate-900" x-data="mainPage"
-      :class="showSmMenu? 'overflow-y-hidden' : ''" x-cloak>
+      :class="showSmMenu? 'overflow-y-hidden' : ''" x-cloak
+      @keydown.escape="showMailModal = false">
 
     <!-- Page Content -->
     <main :class="[
@@ -48,8 +49,6 @@
 
             @livewire('mini-nav-wire')
 
-            @livewire('mail-modal-wire')
-
         </header>
 
         <div class="{{ Route::current()->getName() != 'index' ? ' hidden lg:block ' : '' }}">
@@ -75,6 +74,8 @@
 
 
         <x-content.footer />
+
+        @livewire('mail-modal-wire')
 
     </main>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\AboutItemsWire;
 use App\Http\Livewire\Auth\AccountPageWire;
+use App\Http\Livewire\Dashboard\MailishWire;
 use App\Http\Livewire\Dashboard\ReportsWire;
 use App\Http\Livewire\DevTools\MigrationMakerWire;
 use App\Http\Livewire\LimeLampWire;
@@ -37,6 +38,7 @@ Route::get('/about', AboutItemsWire::class)->name('about');
 Route::get('/pi-rack', PieRackWire::class)->name('pi-rack');
 Route::get('/desktop-power-supply', DesktopPowerSupplyWire::class)->name('desktop-power-supply');
 
+
 /** My routes, for editing the pages */
 Route::middleware(['auth', 'editor'])->group(function(){
     Route::get('/about/manage', ManageAboutItemsWire::class);
@@ -54,6 +56,6 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('reports', ReportsWire::class)->name('dashboard.reports');
-    Route::get('mailish', \App\Http\Livewire\Dashboard\MailishWire::class)->name('dashboard.mailish');
+    Route::get('mailish', MailishWire::class)->name('dashboard.mailish');
 
 });
